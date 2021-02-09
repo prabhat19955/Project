@@ -26,7 +26,7 @@ public class DataBaseUtilities {
 		try {
 			driverRef = new Driver();
 			DriverManager.registerDriver(driverRef);
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projects", "root", "root");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/collage", "root", "root");
 		} catch (SQLException e) {
 			
 			e.printStackTrace();

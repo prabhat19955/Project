@@ -48,7 +48,22 @@ public class BaseClass {
 		//used for cross browser exceution
 	}
 	
-	@Parameters("browser")
+//	@Parameters("browser")
+//	//@BeforeTest(groups = {"smokeTest" , "regressionTest"})
+//		public void configBT(String BROWSER) throws Throwable {
+//			//used for cross browser exceution
+//			if(BROWSER.equalsIgnoreCase("chrome")) {
+//				driver=new ChromeDriver();
+//			}else if(BROWSER.equalsIgnoreCase("firefox")) {
+//				driver=new FirefoxDriver();
+//			}else if(BROWSER.equalsIgnoreCase("ie")) {
+//				driver=new InternetExplorerDriver();
+//			}
+//			driver.manage().window().maximize();
+//			wlib.waitForHTMLDOM(driver);
+//			driver.get(fu.getPropertyKeyValue("url"));
+//		}
+		
 	
 	@BeforeClass(groups = {"smokeTest" , "regressionTest"})
 	public void openBrowser() throws Throwable {
@@ -65,7 +80,7 @@ public class BaseClass {
 	}
 	
 	
-	@BeforeMethod
+	@BeforeMethod(groups = {"smokeTest" , "regressionTest"})
 	public void loginApp() throws Throwable {
 		driver.get(fu.getPropertyKeyValue("URL"));
 		driver.findElement(By.name("user_name")).sendKeys(fu.getPropertyKeyValue("UN"));
@@ -73,13 +88,13 @@ public class BaseClass {
 		driver.findElement(By.id("submitButton")).click();
 	}
 	
-	@AfterMethod
+	@AfterMethod(groups = {"smokeTest" , "regressionTest"})
 	public void logoutApp() {
 		driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']")).click();
 		driver.findElement(By.xpath("//a[.='Sign Out']")).click();
 	}
 	
-	@AfterClass
+	@AfterClass(groups = {"smokeTest" , "regressionTest"})
 	public void closeBrowser() {
 		driver.close();
 	}

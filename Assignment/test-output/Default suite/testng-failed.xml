@@ -3,15 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.test.TC_17_DuplicateContact">
+      <class name="com.crm.practice.RemoteExeWithDataProvider">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="logoutApp"/>
-          <include name="loginApp"/>
-          <include name="createDuplicateContact"/>
-          <include name="openBrowser"/>
+          <include name="remoteExeTest"/>
         </methods>
-      </class> <!-- com.crm.test.TC_17_DuplicateContact -->
+      </class> <!-- com.crm.practice.RemoteExeWithDataProvider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
